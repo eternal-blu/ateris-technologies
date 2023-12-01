@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{b06968c4-229e-42e9-946e-a564bfaa8b6b}</ProjectGuid>
+    <RootNamespace>aterisinternal</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+    <EnableFuzzer>false</EnableFuzzer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <EnableASAN>false</EnableASAN>
+    <EnableFuzzer>false</EnableFuzzer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>ateris</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>ateris</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ATERISINTERNAL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>true</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ATERISINTERNAL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>true</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;ATERISINTERNAL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;ATERISINTERNAL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\Features\Aimbot\Aimbot.h" />
+    <ClInclude Include="Framework\Features\AnimFix\AnimFix.h" />
+    <ClInclude Include="Framework\Features\Anti-Aimbot\Anti-Aimbot.h" />
+    <ClInclude Include="Framework\Features\Auto\AutoAirblast\AutoAirblast.h" />
+    <ClInclude Include="Framework\Features\Auto\AutoDetonate\AutoDetonate.h" />
+    <ClInclude Include="Framework\Features\Auto\AutoMedic\AutoMedic.h" />
+    <ClInclude Include="Framework\Features\Auto\AutoVaccinator\AutoVacc.h" />
+    <ClInclude Include="Framework\Features\Confidence\Confidence.h" />
+    <ClInclude Include="Framework\Features\CritHacks\CritHacks.h" />
+    <ClInclude Include="Framework\Features\EnginePrediction\Engine.h" />
+    <ClInclude Include="Framework\Features\ESP\ESP.h" />
+    <ClInclude Include="Framework\Features\Events\Events.h" />
+    <ClInclude Include="Framework\Features\LagCompensation\LagComp.h" />
+    <ClInclude Include="Framework\Features\Legitbob\Legitbob.h" />
+    <ClInclude Include="Framework\Features\Melee\MeleeBob.h" />
+    <ClInclude Include="Framework\Features\Menu\Config.h" />
+    <ClInclude Include="Framework\Features\Menu\Input\Input.h" />
+    <ClInclude Include="Framework\Features\Menu\JSON\json.h" />
+    <ClInclude Include="Framework\Features\Menu\Menu.h" />
+    <ClInclude Include="Framework\Features\Menu\Textures.h" />
+    <ClInclude Include="Framework\Features\Misc\Misc.h" />
+    <ClInclude Include="Framework\Features\Misc\Wave\Wave.h" />
+    <ClInclude Include="Framework\Features\Models\Models.h" />
+    <ClInclude Include="Framework\Features\NoSpread\NoSpread.h" />
+    <ClInclude Include="Framework\Features\Notifications\Notifications.h" />
+    <ClInclude Include="Framework\Features\Outlines\Outlines.h" />
+    <ClInclude Include="Framework\Features\Projectile\Movement\Movement.h" />
+    <ClInclude Include="Framework\Features\Projectile\Projectile.h" />
+    <ClInclude Include="Framework\Features\Projectile\ProjectileSim\ProjectileSim.h" />
+    <ClInclude Include="Framework\Features\Visuals\Visuals.h" />
+    <ClInclude Include="Framework\Framework.h" />
+    <ClInclude Include="Framework\Hooks\HookList.h" />
+    <ClInclude Include="Framework\Hooks\Hooks.h" />
+    <ClInclude Include="Framework\SDK\Math\FNV1A.h" />
+    <ClInclude Include="Framework\SDK\Math\Math.h" />
+    <ClInclude Include="Framework\SDK\Math\MD5.h" />
+    <ClInclude Include="Framework\SDK\Steam\SteamClient.h" />
+    <ClInclude Include="Framework\SDK\TF2\AnimState.h" />
+    <ClInclude Include="Framework\SDK\TF2\Beams.h" />
+    <ClInclude Include="Framework\SDK\TF2\CBaseHandle.h" />
+    <ClInclude Include="Framework\SDK\TF2\CEconNotification.h" />
+    <ClInclude Include="Framework\SDK\TF2\CHandle.h" />
+    <ClInclude Include="Framework\SDK\TF2\CTFGCClient.h" />
+    <ClInclude Include="Framework\SDK\TF2\CUtlVector.h" />
+    <ClInclude Include="Framework\SDK\TF2\DebugOverlay.h" />
+    <ClInclude Include="Framework\SDK\TF2\GameEvents.h" />
+    <ClInclude Include="Framework\SDK\TF2\GameRules.h" />
+    <ClInclude Include="Framework\SDK\TF2\IHandleEntity.h" />
+    <ClInclude Include="Framework\SDK\TF2\KeyValues.h" />
+    <ClInclude Include="Framework\SDK\TF2\MemAlloc.h" />
+    <ClInclude Include="Framework\SDK\TF2\ModelInfo.h" />
+    <ClInclude Include="Framework\SDK\TF2\MaterialSystem.h" />
+    <ClInclude Include="Framework\SDK\TF2\Physics.h" />
+    <ClInclude Include="Framework\SDK\TF2\StudioRender.h" />
+    <ClInclude Include="Framework\SDK\TF2\UniformRandomStream.h" />
+    <ClInclude Include="Framework\Utils\DrawTools\DrawTools.h" />
+    <ClInclude Include="Framework\Utils\MinHook\buffer.h" />
+    <ClInclude Include="Framework\Utils\MinHook\hde\hde32.h" />
+    <ClInclude Include="Framework\Utils\MinHook\hde\hde64.h" />
+    <ClInclude Include="Framework\Utils\MinHook\hde\pstdint.h" />
+    <ClInclude Include="Framework\Utils\MinHook\hde\table32.h" />
+    <ClInclude Include="Framework\Utils\MinHook\hde\table64.h" />
+    <ClInclude Include="Framework\Utils\MinHook\MinHook.h" />
+    <ClInclude Include="Framework\Utils\MinHook\trampoline.h" />
+    <ClInclude Include="Framework\SDK\Interfaces\Interfaces.h" />
+    <ClInclude Include="Framework\SDK\TF2\Bitbuf.h" />
+    <ClInclude Include="Framework\SDK\TF2\Input.h" />
+    <ClInclude Include="Framework\SDK\TF2\Material.h" />
+    <ClInclude Include="Framework\SDK\TF2\Prediction.h" />
+    <ClInclude Include="Framework\SDK\TF2\GameMovement.h" />
+    <ClInclude Include="Framework\SDK\TF2\GlobalVars.h" />
+    <ClInclude Include="Framework\SDK\TF2\Color.h" />
+    <ClInclude Include="Framework\SDK\TF2\Const.h" />
+    <ClInclude Include="Framework\SDK\TF2\Entities.h" />
+    <ClInclude Include="Framework\SDK\TF2\BaseClientDLL.h" />
+    <ClInclude Include="Framework\SDK\TF2\EntityList.h" />
+    <ClInclude Include="Framework\SDK\TF2\ClientMode.h" />
+    <ClInclude Include="Framework\SDK\TF2\Cvar.h" />
+    <ClInclude Include="Framework\SDK\TF2\EngineClient.h" />
+    <ClInclude Include="Framework\SDK\TF2\EngineTrace.h" />
+    <ClInclude Include="Framework\SDK\TF2\EngineVGui.h" />
+    <ClInclude Include="Framework\SDK\TF2\RenderView.h" />
+    <ClInclude Include="Framework\SDK\TF2\Surface.h" />
+    <ClInclude Include="Framework\SDK\TF2\TF2.h" />
+    <ClInclude Include="Framework\SDK\TF2\Vector.h" />
+    <ClInclude Include="Framework\Utils\Memory\Memory.h" />
+    <ClInclude Include="Framework\Utils\NetVars\NetVars.h" />
+    <ClInclude Include="Globals.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Framework\Features\Aimbot\Aimbot.cpp" />
+    <ClCompile Include="Framework\Features\AnimFix\AnimFix.cpp" />
+    <ClCompile Include="Framework\Features\Anti-Aimbot\Anti-Aimbot.cpp" />
+    <ClCompile Include="Framework\Features\Auto\AutoAirblast\AutoAirblast.cpp" />
+    <ClCompile Include="Framework\Features\Auto\AutoDetonate\AutoDetonate.cpp" />
+    <ClCompile Include="Framework\Features\Auto\AutoMedic\AutoMedic.cpp" />
+    <ClCompile Include="Framework\Features\Auto\AutoVaccinator\AutoVacc.cpp" />
+    <ClCompile Include="Framework\Features\Confidence\Confidence.cpp" />
+    <ClCompile Include="Framework\Features\CritHacks\CritHacks.cpp" />
+    <ClCompile Include="Framework\Features\EnginePrediction\Engine.cpp" />
+    <ClCompile Include="Framework\Features\ESP\ESP.cpp" />
+    <ClCompile Include="Framework\Features\Events\Events.cpp" />
+    <ClCompile Include="Framework\Features\LagCompensation\LagComp.cpp" />
+    <ClCompile Include="Framework\Features\Legitbob\Legitbob.cpp" />
+    <ClCompile Include="Framework\Features\Melee\MeleeBob.cpp" />
+    <ClCompile Include="Framework\Features\Menu\Input\Input.cpp" />
+    <ClCompile Include="Framework\Features\Menu\JSON\json.cpp" />
+    <ClCompile Include="Framework\Features\Menu\Menu.cpp" />
+    <ClCompile Include="Framework\Features\Menu\Widgets.cpp" />
+    <ClCompile Include="Framework\Features\Misc\Misc.cpp" />
+    <ClCompile Include="Framework\Features\Misc\Wave\Wave.cpp" />
+    <ClCompile Include="Framework\Features\Models\Models.cpp" />
+    <ClCompile Include="Framework\Features\NoSpread\NoSpread.cpp" />
+    <ClCompile Include="Framework\Features\Notifications\Notifications.cpp" />
+    <ClCompile Include="Framework\Features\Outlines\Outlines.cpp" />
+    <ClCompile Include="Framework\Features\Projectile\Movement\Movement.cpp" />
+    <ClCompile Include="Framework\Features\Projectile\ProjectileSim\ProjectileSim.cpp" />
+    <ClCompile Include="Framework\Features\Projectile\Projectile.cpp" />
+    <ClCompile Include="Framework\Features\Visuals\Visuals.cpp" />
+    <ClCompile Include="Framework\Framework.cpp" />
+    <ClCompile Include="Framework\Hooks\HookList.cpp" />
+    <ClCompile Include="Framework\Hooks\Hooks.cpp" />
+    <ClCompile Include="Framework\SDK\Math\MD5.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\AnimState.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\Beams.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\Bitbuf.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\CBaseHandle.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\CTFGCClient.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\CUtlVector.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\KeyValues.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\Surface.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\TF2.cpp" />
+    <ClCompile Include="Framework\Utils\DrawTools\DrawTools.cpp" />
+    <ClCompile Include="Framework\Utils\MinHook\buffer.c" />
+    <ClCompile Include="Framework\Utils\MinHook\hde\hde32.c" />
+    <ClCompile Include="Framework\Utils\MinHook\hde\hde64.c" />
+    <ClCompile Include="Framework\Utils\MinHook\hook.c" />
+    <ClCompile Include="Framework\Utils\MinHook\trampoline.c" />
+    <ClCompile Include="Framework\SDK\TF2\Entities.cpp" />
+    <ClCompile Include="Framework\SDK\TF2\EngineTrace.cpp" />
+    <ClCompile Include="Framework\Utils\NetVars\NetVars.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
